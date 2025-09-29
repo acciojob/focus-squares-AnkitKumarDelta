@@ -11,6 +11,9 @@
 			background-color: #E6E6FA; /*lavender */
 			cursor: pointer;
 		}
+		.color{
+			background-color : brown;
+		}
 	</style>
 </head>
 <body>
@@ -18,7 +21,24 @@
 	<div class="square" id="square2" ></div>
 	<div class="square" id="square3" ></div>
 
-	<script type="text/javascript" src="./script.js">
+	<script>
+		let divs = document.querySelectorAll("div");
+divs.forEach((div)=>{
+	div.addEventListener("mouseover",(e)=>{
+		for(let i of divs){
+			if(i!=e.target){
+				i.classList.add("color");
+			}
+		}
+	});
+	div.addEventListener("mouseout",(e)=>{
+		for(let i of divs){
+			if(i!=e.target){
+				i.classList.remove("color");
+			}
+		}
+	});
+});
 	</script>
 </body>
 </html>
